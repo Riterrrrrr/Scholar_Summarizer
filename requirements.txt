@@ -3,3 +3,4 @@ uvicorn
 trafilatura
 google-genai
 pydantic
+lxml_html_clean
