@@ -15,8 +15,7 @@ import time
 
 # 1. API 配置
 # 请去 https://aistudio.google.com/ 获取 API Key
-GOOGLE_API_KEY = "AIzaSyCLNsWRfOjc2cZnjTSi5tv3fbRKHjB6TsU"  # 付费 Key，请自行更换
-# GOOGLE_API_KEY = "AIzaSyDFiq3gsNqG_8QK8NqALsKrsYRs8woCUq0"  # 免费 Key，请自行更换
+GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "YOUR_LOCAL_KEY_FOR_TESTING")
 
 # 2. 模型选择
 # 2025年此时，建议查看 Google AI Studio 模型列表。
@@ -198,4 +197,5 @@ async def api_summarize(request: URLRequest):
 if __name__ == "__main__":
     # 启动服务器，监听 8000 端口
     print("🚀 后端服务启动中... 请保持此窗口打开")
+
     uvicorn.run(app, host="127.0.0.1", port=8000)
